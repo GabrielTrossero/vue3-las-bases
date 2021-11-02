@@ -1,28 +1,30 @@
 <template>
-  <h2>Contador Sencillo</h2>
-  <p>{{ counter }}</p>
+  <h2>Contador Reactivo</h2>
+  <p>{{ data.counter }}</p>
   <button @click="increment">Incrementar</button>
   <button @click="decrement">Decrementar</button>
 </template>
 
 <script>
-import { ref } from "vue";
+import { reactive } from "vue";
 export default {
-  name: "SimpleCounter",
+  name: "ReactiveCounter",
 
   setup() {
-    const counter = ref(0);
+    const data = reactive({
+      counter: 0,
+    });
 
     const increment = () => {
-      counter.value++;
+      data.counter++;
     };
 
     const decrement = () => {
-      counter.value--;
+      data.counter--;
     };
 
     return {
-      counter,
+      data,
       increment,
       decrement,
     };
