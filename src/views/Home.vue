@@ -1,4 +1,6 @@
 <template>
+  <ProfileWithProps name="Alejando Ramirez" :age="39" />
+  <hr />
   <SimpleFetch />
   <hr />
   <DataList />
@@ -16,17 +18,19 @@
 
 <script>
 // @ is an alias to /src
-import SimpleFetch from "@/components/06SimpleFetch.vue";
-import DataList from "@/components/05DataList.vue";
-import SimpleCounterCompositionApi from "@/components/04SimpleCounterCompositionApi.vue";
-import WatchCounter from "@/components/03WatchCounter.vue";
-import ReactiveCounter from "@/components/02ReactiveCounter.vue";
-import SimpleCounter from "@/components/01SimpleCounter.vue";
-import HelloWorld from "@/components/00HelloWorld.vue";
+import ProfileWithProps from "../components/08ProfileWithProps.vue";
+import SimpleFetch from "../components/06SimpleFetch.vue";
+import DataList from "../components/05DataList.vue";
+import SimpleCounterCompositionApi from "../components/04SimpleCounterCompositionApi.vue";
+import WatchCounter from "../components/03WatchCounter.vue";
+import ReactiveCounter from "../components/02ReactiveCounter.vue";
+import SimpleCounter from "../components/01SimpleCounter.vue";
+import HelloWorld from "../components/00HelloWorld.vue";
 
 export default {
   name: "Home",
   components: {
+    ProfileWithProps,
     SimpleFetch,
     DataList,
     SimpleCounterCompositionApi,
