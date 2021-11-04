@@ -1,4 +1,6 @@
 <template>
+  <EmitEvents @onFire="eventEmittedFromChild" />
+  <hr />
   <ProfileWithProps name="Alejando Ramirez" :age="39" />
   <hr />
   <SimpleFetch />
@@ -18,6 +20,7 @@
 
 <script>
 // @ is an alias to /src
+import EmitEvents from "../components/09EmitEvents.vue";
 import ProfileWithProps from "../components/08ProfileWithProps.vue";
 import SimpleFetch from "../components/06SimpleFetch.vue";
 import DataList from "../components/05DataList.vue";
@@ -30,6 +33,7 @@ import HelloWorld from "../components/00HelloWorld.vue";
 export default {
   name: "Home",
   components: {
+    EmitEvents,
     ProfileWithProps,
     SimpleFetch,
     DataList,
@@ -38,6 +42,15 @@ export default {
     ReactiveCounter,
     SimpleCounter,
     HelloWorld,
+  },
+  setup() {
+    const eventEmittedFromChild = (messaje) => {
+      console.log(messaje);
+    };
+
+    return {
+      eventEmittedFromChild,
+    };
   },
 };
 </script>
