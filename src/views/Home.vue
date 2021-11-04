@@ -1,4 +1,6 @@
 <template>
+  <SimpleFetch />
+  <hr />
   <DataList />
   <hr />
   <SimpleCounterCompositionApi />
@@ -14,6 +16,7 @@
 
 <script>
 // @ is an alias to /src
+import SimpleFetch from "@/components/06SimpleFetch.vue";
 import DataList from "@/components/05DataList.vue";
 import SimpleCounterCompositionApi from "@/components/04SimpleCounterCompositionApi.vue";
 import WatchCounter from "@/components/03WatchCounter.vue";
@@ -24,6 +27,7 @@ import HelloWorld from "@/components/00HelloWorld.vue";
 export default {
   name: "Home",
   components: {
+    SimpleFetch,
     DataList,
     SimpleCounterCompositionApi,
     WatchCounter,
