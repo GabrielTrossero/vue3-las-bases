@@ -1,4 +1,6 @@
 <template>
+  <RootEvents />
+  <hr />
   <EmitEvents @onFire="eventEmittedFromChild" />
   <hr />
   <ProfileWithProps name="Alejando Ramirez" :age="39" />
@@ -20,6 +22,7 @@
 
 <script>
 // @ is an alias to /src
+import RootEvents from "../components/10RootEvents.vue";
 import EmitEvents from "../components/09EmitEvents.vue";
 import ProfileWithProps from "../components/08ProfileWithProps.vue";
 import SimpleFetch from "../components/06SimpleFetch.vue";
@@ -33,6 +36,7 @@ import HelloWorld from "../components/00HelloWorld.vue";
 export default {
   name: "Home",
   components: {
+    RootEvents,
     EmitEvents,
     ProfileWithProps,
     SimpleFetch,
