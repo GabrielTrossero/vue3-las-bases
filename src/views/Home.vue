@@ -1,4 +1,7 @@
 <template>
+  <LoginForm v-model:email="email" v-model:pass="pass" />
+  {{ email + " - " + pass }}
+  <hr />
   <RootEvents />
   <hr />
   <EmitEvents @onFire="eventEmittedFromChild" />
@@ -22,6 +25,7 @@
 
 <script>
 // @ is an alias to /src
+import LoginForm from "../components/11LoginForm.vue";
 import RootEvents from "../components/10RootEvents.vue";
 import EmitEvents from "../components/09EmitEvents.vue";
 import ProfileWithProps from "../components/08ProfileWithProps.vue";
@@ -33,9 +37,11 @@ import ReactiveCounter from "../components/02ReactiveCounter.vue";
 import SimpleCounter from "../components/01SimpleCounter.vue";
 import HelloWorld from "../components/00HelloWorld.vue";
 
+import { reactive, toRefs } from "vue";
 export default {
   name: "Home",
   components: {
+    LoginForm,
     RootEvents,
     EmitEvents,
     ProfileWithProps,
@@ -52,8 +58,14 @@ export default {
       console.log(messaje);
     };
 
+    const login = reactive({
+      email: "",
+      pass: "",
+    });
+
     return {
       eventEmittedFromChild,
+      ...toRefs(login),
     };
   },
 };
